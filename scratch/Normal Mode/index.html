@@ -32,22 +32,13 @@
           shots: 0,
           score: 0
         }
-        this.shotSound = new Audio('smb_fireball.wav')
-        this.scoreSound = new Audio('smb_1-up.wav')
       }
 
       shotHandler = () => {
 
         let score = this.state.score
-        this.shotSound.play()
-
         if (Math.random() > 0.5) {
           score += 1
-
-          setTimeout(() => {
-          this.scoreSound.play()
-            
-          }, 180)
         }
 
         this.setState((state, props) => ({
@@ -57,17 +48,6 @@
       }
 
       render() {
-        let shotPercentageDiv
-        if (this.state.shots) {
-        const shotPercentage = Math.round((this.state.score / this.state.shots) * 100)
-        shotPercentageDiv = (
-          <div>
-              <strong>Shooting %: {shotPercentage}</strong>
-              </div>
-
-        )
-        
-        }
         return (
           <div className="Team">
             <h2>{this.props.name}</h2>
@@ -82,69 +62,29 @@
               <div>
               <strong>Score:</strong> {this.state.score}   
               </div>
-              {shotPercentageDiv}
-
                 <button onClick={this.shotHandler}>Shoot</button>
             </div>
         )
       }
     }
     
-    function Game(props) {
+    
+    
+    function App(props) {
       return (
-        <div class="Game">
-        <h1>Welcome to {props.venue}</h1>
+        <div className="App">
           <div className="stats">
           <Team 
-          name={props.visitingTeam.name}
-          logo={props.visitingTeam.logoSrc}
+          name="Robots" 
+          logo="./robot.jpg"
           />
           <div className="versus">
             <h1>VS</h1></div>
           <Team 
-          name={props.homeTeam.name} 
-          logo={props.homeTeam.logoSrc}
+          name="Aliens" 
+          logo="./alien.jpg"
           />
           </div>
-        </div>
-      )
-
-    }
-    
-    
-    function App(props) {
-      const aliens = {
-        name: 'Aliens',
-        logoSrc: './alien.jpg'
-      }
-
-      const robots = {
-        name: 'Robots',
-        logoSrc: './robot.jpg'
-
-      }
-
-      const mindflayers = {
-        name: 'Mindflayers',
-        logoSrc: './mindflayer.jpg'
-
-      }
-      const beholders = {
-        name: 'Beholders',
-        logoSrc: './Beholder.jpg'
-
-      }
-      return (
-        <div className="App">
-          <Game venue="Galactic Venue A275"
-          homeTeam={robots}
-          visitingTeam={aliens}
-          />
-          <Game venue="Galactic Venue C079" 
-          homeTeam={beholders}
-          visitingTeam={mindflayers}
-          />
-
         </div>
       )
     }

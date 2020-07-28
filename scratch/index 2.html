@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Sports Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- include an element for ReactDOM to attach our React-generated elements to -->
+  <div id="root"></div>
+
+  <!-- include React and ReactDOM -->
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!-- include Babel standalone so we can process JSX in React.createElement stuff -->
+  <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <!-- include our JS+JSX for the React Appliccation -->
+  <script type="text/babel">
+
+    // An App component under which all other components will be added
+    function App(props) {
+      // return (
+      //   <div>
+      //     <h1>Welcome to the Sports Game starter!</h1>
+      //     <em>This file represents the way your code should look after completing the <strong>Setup</strong> steps in the instructions.</em>
+      //   </div>
+      // )
+
+
+
+      return (
+            <div className="content">
+                <h1 className="text-center">Odd / Even CSS Selectors</h1>
+                <div>
+                    <p>The <code>nth-child</code> pseudo-class is specified with a single argument, which represents the pattern for matching elements.</p>
+                </div>
+                <div className="div-text-flavor">
+                    <h2 className="text-center">Choose your flavor</h2>
+                </div>
+                <div className="selectors-choice">
+                    <ul className="btn-list">
+                        <li>
+                            <button 
+                                onClick={this.onApplyOddHighlights}
+                                ref={this.btnOddList}
+                            >
+                                    Odd
+                            </button>
+                        </li>
+                        <li>
+                            <button 
+                                onClick={this.onApplyEvenHighlights}
+                                ref={this.btnEvenList}
+                            >
+                                Even
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                
+                <p className="text-center">
+                    {oddEvenListDescription[this.state.activeClass]}
+                </p>
+
+
+                <div>
+                    <ul className={`list-items ${this.state.activeClass}`}>
+                        {renderLists}
+                    </ul>
+                </div>
+            </div>
+        )
+    }
+
+
+
+
+
+
+
+
+
+    }
+
+
+    <MyButton color="blue" shadowSize={2}>
+  Click Me
+</MyButton>
+
+React.createElement(
+  MyButton,
+  {color: 'blue', shadowSize: 2},
+  'Click Me'
+)
+
+    class Team extends React.Component {
+      render() {
+        return (<h1>{this.props.teamName}</h1>;
+          <h2>{this.props.logo}</h2>;
+          <span>Shots:{this.props.shotsTaken}</span>;
+          <span>Goals:{this.props.scoredGoals}</span>;
+          
+          <button>Hit me</button>;
+      )
+      }
+    
+    }
+
+    function ScoredGoals (props) {
+      return ( {
+        this.state = Math.round(Math.random() * 1);
+        // console.log(this.state)
+        if this.state === 1 
+        then 
+        this.props.scoredGoals += 1
+        
+      )    
+    }
+  }
+
+
+  function NumberDescriber(props) {
+  let shotAtGoal;
+  if (props.number % 2 == 0) {
+    shotAtGoal = <strong>even</strong>;
+  } else {
+    shotAtGoal = <i>odd</i>;
+  }
+  return <div>{props.number} is an {shotAtGoal} number</div>;
+}
+
+    class playingTeam extends React.Component {
+      // persistent data
+      // needs to be able to hold own state; smart component
+      constructor(props) {
+        super(props)
+
+        let initialCount;
+        if (this.props.inital === undefined) {
+          initialCount = this.props.initial
+          this.setState({
+            Math.random
+          })
+        } else {
+          initialCount = this.props.initial
+        }
+        this.state = {
+          count: this.props.initial || 0,
+          //cannot change state here
+        }
+      }
+
+      //methods
+      shoot = (event) => {
+        //this
+        //change 'constructor state' here
+        this.setState((currentState, props) => (
+          { count: currentState.count + 1 }
+
+          //new value of 'state'
+        ))
+        //setState method call, or Callback function
+
+      }
+
+      scoresGoal = (event) => {
+        return this.goals += 1
+      }
+
+      checkForGoal = (event) => {
+        const isGoal = (Math.random() * 2) > 1
+        if (isGoal) {
+          this.scoresGoal()  // calls for scoresGoal 'method'
+        }
+        return isGoal
+      }
+
+
+      render() {
+        return (
+          <div>
+            <button onClick={this.shot}>Shoot!</button>
+            <span className={this.state.className}>{this.state.count}</span>
+          </div>
+        )
+      }
+    }
+
+    class BothTeams extends React.Component {
+      render() {
+        return (
+          <div>
+            <ThisTeam1 />
+            <ThisTeam2 />
+
+          </div>
+
+        )
+      }
+    }
+
+
+
+
+
+    // Render the App
+    ReactDOM.render(
+      <App />,
+      document.getElementById('root')
+    )
+  </script>
+</body>
+
+</html>
